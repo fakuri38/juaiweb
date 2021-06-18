@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Product\ProductController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,11 +12,31 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::domain('juai.my')->group(function () {
+    Route::get('/', function () {
+        return view('welcome');
+    });
 
-Route::get('/', function () {
-    return view('welcome');
+    Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+
+        Route::get('/dashboard', function () {
+            return view('admin.index');
+        })->name('dashboard');
+
+        Route::get('/product', [ProductController::class, 'index'])->name('product');
+    });
+
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('admin.index');
-})->name('dashboard');
+Route::domain('{store_name}.juai.my')->group(function () {
+    Route::get('/', 'App\Http\Controllers\StoreController@index');
+});
+
+/*
+Route::get('/', function () {
+    return view('welcome');
+});*/
+
+
+
+

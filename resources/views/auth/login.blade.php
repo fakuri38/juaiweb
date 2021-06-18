@@ -43,7 +43,8 @@ License: For each use you must have a valid license purchased only from above li
 					<!--begin::Wrapper-->
 					<div class="w-lg-500px bg-white rounded shadow-sm p-10 p-lg-15 mx-auto">
 						<!--begin::Form-->
-						<form class="form w-100" novalidate="novalidate" id="kt_sign_in_form" action="#">
+						<form class="form w-100" novalidate="novalidate" method="POST" action="{{ route('login') }}">
+						@csrf
 							<!--begin::Heading-->
 							<div class="text-center mb-10">
 								<!--begin::Title-->
@@ -84,10 +85,8 @@ License: For each use you must have a valid license purchased only from above li
 							<!--begin::Actions-->
 							<div class="text-center">
 								<!--begin::Submit button-->
-								<button type="submit" id="kt_sign_in_submit" class="btn btn-lg btn-primary w-100 mb-5">
-									<span class="indicator-label">Daftar</span>
-									<span class="indicator-progress">Please wait...
-									<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+								<button type="submit" class="btn btn-lg btn-primary w-100 mb-5">
+									<span class="indicator-label">Log Masuk</span>
 								</button>
 								<!--end::Submit button-->
 								
