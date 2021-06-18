@@ -14,7 +14,7 @@ class CreateProductIventoryTable extends Migration
     public function up()
     {
         Schema::create('product_iventory', function (Blueprint $table) {
-            $table->integer('id')->primary();
+            $table->integer('id', true);
             $table->integer('product_id')->nullable()->index('iventory_product_id');
             $table->integer('quantity')->nullable();
         });

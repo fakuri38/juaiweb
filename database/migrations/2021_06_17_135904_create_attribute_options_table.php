@@ -14,7 +14,7 @@ class CreateAttributeOptionsTable extends Migration
     public function up()
     {
         Schema::create('attribute_options', function (Blueprint $table) {
-            $table->integer('id')->primary();
+            $table->integer('id', true);
             $table->integer('attribute_id')->nullable()->index('attribute_id');
             $table->string('option_name')->nullable();
             $table->decimal('option_price', 10)->nullable();

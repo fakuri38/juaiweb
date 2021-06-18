@@ -14,7 +14,7 @@ class CreateProductAttributeTable extends Migration
     public function up()
     {
         Schema::create('product_attribute', function (Blueprint $table) {
-            $table->integer('id')->primary();
+            $table->integer('id', true);
             $table->integer('product_id')->nullable()->index('product_id');
             $table->integer('attribute_id')->nullable()->index('product_attribute_id');
         });
