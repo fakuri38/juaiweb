@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Product\ProductController;
+use App\Http\Controllers\Product\AttributeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,6 +25,9 @@ Route::domain('juai.my')->group(function () {
         })->name('dashboard');
 
         Route::get('/product', [ProductController::class, 'index'])->name('product');
+        Route::get('/attribute', [AttributeController::class, 'index'])->name('attribute');
+        Route::get('/attribute/add', [AttributeController::class, 'add'])->name('AttributeAdd');
+        Route::get('/attribute/view', [AttributeController::class, 'view'])->name('AttributeView');
     });
 
 });
