@@ -25,9 +25,17 @@ Route::domain('juai.my')->group(function () {
         })->name('dashboard');
 
         Route::get('/product', [ProductController::class, 'index'])->name('product');
-        Route::get('/attribute', [AttributeController::class, 'index'])->name('attribute');
-        Route::get('/attribute/add', [AttributeController::class, 'add'])->name('AttributeAdd');
-        Route::get('/attribute/view', [AttributeController::class, 'view'])->name('AttributeView');
+
+        Route::group(['prefix' => 'attribute'], function () {
+
+            Route::get('/', [AttributeController::class, 'index'])->name('attribute');
+            Route::get('/add', [AttributeController::class, 'add'])->name('AttributeAdd');
+            Route::get('/view', [AttributeController::class, 'view'])->name('AttributeView');
+            Route::get('/destroy', [AttributeController::class, 'destroy'])->name('AttributeDestroy');
+            Route::get('/edit/{attribute_id}', [AttributeController::class, 'edit'])->name('AttributeEdit');
+            Route::get('/add/attribute-option', [AttributeController::class, 'attributeOption'])->name('AttributeOption');
+            Route::get('/destroy/attribute-option', [AttributeController::class, 'attrDestroy'])->name('AttrOptionDestroy');
+        });
     });
 
 });

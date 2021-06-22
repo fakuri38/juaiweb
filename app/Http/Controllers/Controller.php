@@ -27,4 +27,11 @@ class Controller extends BaseController
     {
         return Response::json(ResponseUtil::makeError($error), $code);
     }
+
+    public function messages()
+    {
+        return [
+            'attribute_name.required' => 'Nama Attribut Tidak Boleh Kosong!',
+        ];
+    }
 }

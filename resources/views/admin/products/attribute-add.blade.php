@@ -125,7 +125,7 @@ element::-webkit-scrollbar {
 								<!--begin::Page title-->
 								<div data-kt-place="true" data-kt-place-mode="prepend" data-kt-place-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}" class="page-title d-flex align-items-center me-3 flex-wrap mb-5 mb-lg-0 lh-1">
 									<!--begin::Title-->
-									<h1 class="d-flex align-items-center text-dark fw-bolder my-1 fs-3">Produk
+									<h1 class="d-flex align-items-center text-dark fw-bolder my-1 fs-3">Atribut Option
 									<!--begin::Separator-->
 									<span class="h-20px border-gray-200 border-start ms-3 mx-2"></span>
 									<!--end::Separator-->
@@ -152,8 +152,8 @@ element::-webkit-scrollbar {
 									<!--begin::Header-->
 									<div class="card-header border-0 pt-5">
 										<h3 class="card-title align-items-start flex-column">
-											<span class="card-label fw-bolder fs-3 mb-1">Atribut</span>
-											<span class="text-muted mt-1 fw-bold fs-7">Senarai Atribut</span>
+											<span class="card-label fw-bolder fs-3 mb-1">{{$attribute_name}}</span>
+											<span class="text-muted mt-1 fw-bold fs-7">Senarai Option Atribut</span>
 										</h3>
 										<div class="card-toolbar">
 									    	<a href="#" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#AttributeModal" id="kt_toolbar_primary_button">Cipta</a>
@@ -171,8 +171,9 @@ element::-webkit-scrollbar {
 												<tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0 ">
 											
 													<th class="min-w-125px">No.</th>
-													<th class="min-w-125px">Atribut</th>
-													<th class="min-w-125px">Tindakan</th>
+													<th class="min-w-125px">Nama Option</th>
+													<th class="min-w-125px">Harga Option</th>
+                                                    <th class="min-w-125px">Tindakan</th>
 				
 												</tr>
 												<!--end::Table row-->
@@ -1449,7 +1450,7 @@ element::-webkit-scrollbar {
 					<!--begin::Modal header-->
 					<div class="modal-header">
 						<!--begin::Modal title-->
-						<h2>Cipta Atribut</h2>
+						<h2>Cipta Option Atribut</h2>
 						<!--end::Modal title-->
 						<!--begin::Close-->
 						<div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
@@ -1483,26 +1484,43 @@ element::-webkit-scrollbar {
 											<div class="fv-row mb-10">
 												<!--begin::Label-->
 												<label class="d-flex align-items-center fs-5 fw-bold mb-2">
-													<span class="required">Nama Atribut</span>
-													<i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip" title="Masukkan Nama Atrribut Produk"></i>
+													<span class="required">Nama Option Atribut</span>
+													<i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip" title="Masukkan Nama Option Atribut"></i>
 												</label>
+                                                
 												<!--end::Label-->
 												<!--begin::Input-->
-												<input type="text" class="form-control form-control-lg form-control-solid" id="attribute_name" name="attribute_name" placeholder=""/>
+												<input type="text" class="form-control form-control-lg form-control-solid" id="attribute_name" name="name" placeholder=""/>
 												<!--end::Input-->
 											</div>
+                                            <div class="d-flex flex-stack mb-8"> 
+                                            <!--begin::Label--> 
+                                            <div class="me-5"> <label class="fs-6 fw-bold">Option Mempunyai Harga?</label> 
+                                                <div class="fs-7 fw-bold text-gray-400">Jika Ada Sila Tekan</div> 
+                                            </div> <!--end::Label--> <!--begin::Switch--> 
+                                            <label class="form-check form-switch form-check-custom form-check-solid"> 
+                                                <input id="price_check" class="form-check-input" type="checkbox"> 
+                                            </label> <!--end::Switch--> 
+                                            </div>
+
+											<div class="d-flex flex-stack mb-8"> 
+                                            <!--begin::Label--> 
+                                            <div class="me-5"> <label class="fs-6 fw-bold">Option Mempunyai Stok?</label> 
+                                                <div class="fs-7 fw-bold text-gray-400">Jika Ada Sila Tekan</div> 
+                                            </div> <!--end::Label--> <!--begin::Switch--> 
+                                            <label class="form-check form-switch form-check-custom form-check-solid"> 
+                                                <input id="stock_check" class="form-check-input" type="checkbox"> 
+                                            </label> <!--end::Switch--> 
+                                            </div>
+											
 											<!--end::Input group-->
-											<!--begin::Input group-->
-											<div class="fv-row">
-												<!--begin::Label-->
-												
-												<!--end::Label-->
-												<!--begin:Options-->
-												<div class="fv-row">
-												</div>
-												<!--end:Options-->
+                                            <div id="price_add" class="fv-row mb-10">
+											
 											</div>
-											<!--end::Input group-->
+
+											<div id="stock_add" class="fv-row mb-10">
+											
+											</div>
 										</div>
 									</div>
 									<!--end::Step 1-->
@@ -2080,13 +2098,13 @@ element::-webkit-scrollbar {
 			$('#example').DataTable({
 				processing: true,
 				serverSide: true,
-				ajax: "{{ route('AttributeView') }}",
+				ajax: "{{ route('AttributeEdit', $attribute_id) }}",
 				
 				columns: [
 					{ data: 'DT_RowIndex', 'orderable': false, 'searchable': false },
-					{ data: 'attribute_name', 'orderable': false, 'searchable': false },
-					{ data: 'action', 'orderable': false, 'searchable': false },
-
+                    { data: 'option_name', 'orderable': false, 'searchable': false },
+                    { data: 'option_price', 'orderable': false, 'searchable': false },
+                    { data: 'action', 'orderable': false, 'searchable': false },
 				]
 			});
 		});
@@ -2095,116 +2113,12 @@ element::-webkit-scrollbar {
 	
 		<!--end::Global Javascript Bundle-->
 		<!--begin::Page Custom Javascript(used by this page)-->
-		
-		<script type="text/javascript">
-		$(document).ready(function () {
-			
-			var modalEl = document.querySelector('#AttributeModal');
-			var modal = new bootstrap.Modal(modalEl);
-			form = document.querySelector('#Attribute_form');
-			formAttributeButtons = document.querySelector('[data-kt-stepper-action="test"]');
-			
-
-			formAttributeButtons.addEventListener('click', function (e) {
-				// Prevent default button action
-				e.preventDefault();
-
-				// Disable button to avoid multiple click 
-				formAttributeButtons.disabled = true;
-
-				// Show loading indication
-				formAttributeButtons.setAttribute('data-kt-indicator', 'on');
-				$.ajax({
-					headers: {
-					'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-					},
-					type: 'GET',
-					url: "{{route('AttributeAdd')}}",
-					data: $('#Attribute_form').serialize(),
-					success: function (data) {
-						formAttributeButtons.removeAttribute('data-kt-indicator');
-						formAttributeButtons.disabled = false;
-						Swal.fire({
-							text: "Atribut Telah Dicipta",
-							icon: "success",
-							buttonsStyling: false,
-							confirmButtonText: "Tutup",
-							customClass: {
-								confirmButton: "btn btn-primary"
-							}
-						}).then(function (result) {
-							if (result.isConfirmed) {
-								$('#example').DataTable().ajax.reload();
-								modal.hide(); // close modal
-								//form.submit(); // Submit form
-							}
-						});
-						//console.log(data);
-					},
-					error: function(data){
-						console.log($.parseJSON(data.responseText));
-						formAttributeButtons.removeAttribute('data-kt-indicator');
-						formAttributeButtons.disabled = false;
-						Swal.fire({
-							text: "Atribut Telah Dicipta",
-							icon: "error",
-							buttonsStyling: false,
-							confirmButtonText: "Tutup",
-							customClass: {
-								confirmButton: "btn btn-primary"
-							}
-						}).then(function (result) {
-							if (result.isConfirmed) {
-								//form.submit(); // Submit form
-							}
-						});
-					},
-				});
-			});
-
-		});
-		
-		
-		var deleteID;
-        $('body').on('click', '#getDeleteId', function(){
-            deleteID = $(this).data('id');
-			Swal.fire({
-				text: "Hapus Atribut?",
-				icon: "warning",
-				buttonsStyling: false,
-				confirmButtonText: "Ya",
-				showCancelButton: true,
-				cancelButtonText: "Tidak",
-				customClass: {
-					confirmButton: "btn btn-danger",
-					cancelButton: "btn btn-secondary"
-				}
-			}).then(function (result) {
-				if (result.isConfirmed) {
-									$.ajax({
-					headers: {
-					'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-					},
-					type: 'GET',
-					url: "{{route('AttributeDestroy')}}",
-					data: {
-						id : deleteID,
-					},
-					success: function (data) {
-						$('#example').DataTable().ajax.reload();
-						Swal.fire('Telah Dihapus!', '', 'success')
-					},
-					error: function(data){
-				
-						},
-					});
-					
-					
-					//form.submit(); // Submit form
-				}
-			});
-        })
+		<script>
+		var OPTION_URL = "{{route('AttributeOption')}}";
+		var DELETE_URL = "{{route('AttrOptionDestroy')}}";
+		var ATTRIBUTE_ID = "{{$attribute_id}}";
 		</script>
+		<script src="{{asset('js/attribute/attribute-add.js')}}"></script>
 
 		<!--end::Page Custom Javascript-->
 		<!--end::Javascript-->
