@@ -118,6 +118,7 @@ class AttributeController extends Controller
                 'attribute_options.id',
                 'attribute_options.option_name',
                 'attribute_options.option_price',
+                'attribute_options.option_stock',
             )
             ->where('stores.user_id', Auth::id())
             ->where('attributes.id', $attribute_id);

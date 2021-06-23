@@ -173,6 +173,7 @@ element::-webkit-scrollbar {
 													<th class="min-w-125px">No.</th>
 													<th class="min-w-125px">Nama Option</th>
 													<th class="min-w-125px">Harga Option</th>
+													<th class="min-w-125px">Stok</th>
                                                     <th class="min-w-125px">Tindakan</th>
 				
 												</tr>
@@ -1490,7 +1491,7 @@ element::-webkit-scrollbar {
                                                 
 												<!--end::Label-->
 												<!--begin::Input-->
-												<input type="text" class="form-control form-control-lg form-control-solid" id="attribute_name" name="name" placeholder=""/>
+												<input type="text" class="form-control form-control-lg form-control-solid" id="name" name="name" placeholder=""/>
 												<!--end::Input-->
 											</div>
                                             <div class="d-flex flex-stack mb-8"> 
@@ -2104,6 +2105,7 @@ element::-webkit-scrollbar {
 					{ data: 'DT_RowIndex', 'orderable': false, 'searchable': false },
                     { data: 'option_name', 'orderable': false, 'searchable': false },
                     { data: 'option_price', 'orderable': false, 'searchable': false },
+					{ data: 'option_stock', 'orderable': false, 'searchable': false },
                     { data: 'action', 'orderable': false, 'searchable': false },
 				]
 			});
