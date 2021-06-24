@@ -10,9 +10,9 @@ Like: www.facebook.com/keenthemes
 License: For each use you must have a valid license purchased only from above link in order to legally use the theme for your project.-->
 <html lang="en">
 	<!--begin::Head-->
-	<head><base href="">
+	<head><base href="../../../">
 		<meta charset="utf-8" />
-		<title>Juai</title>
+		<title>Metronic Bootstrap 5 Theme | Keenthemes</title>
 		<meta name="description" content="Metronic admin dashboard live demo. Check out all the features of the admin panel. A large number of settings, additional services and widgets." />
 		<meta name="keywords" content="Metronic, bootstrap, bootstrap 5, Angular 11, VueJs, React, Laravel, admin themes, web design, figma, web development, ree admin themes, bootstrap admin, bootstrap dashboard" />
 		<link rel="canonical" href="Https://preview.keenthemes.com/metronic8" />
@@ -21,6 +21,9 @@ License: For each use you must have a valid license purchased only from above li
 		<!--begin::Fonts-->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
 		<!--end::Fonts-->
+		<!--begin::Page Vendor Stylesheets(used by this page)-->
+		<link href="{{ asset('assets/plugins/custom/datatables/datatables.bundle.css') }}" rel="stylesheet" type="text/css" />
+		<!--end::Page Vendor Stylesheets-->
 		<!--begin::Global Stylesheets Bundle(used by all pages)-->
 		<link href="{{ asset('assets/plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
 		<link href="{{ asset('assets/css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
@@ -90,19 +93,147 @@ License: For each use you must have a valid license purchased only from above li
 								<!--begin::Page title-->
 								<div data-kt-place="true" data-kt-place-mode="prepend" data-kt-place-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}" class="page-title d-flex align-items-center me-3 flex-wrap mb-5 mb-lg-0 lh-1">
 									<!--begin::Title-->
-									<h1 class="d-flex align-items-center text-dark fw-bolder my-1 fs-3">Produk
-									<!--begin::Separator-->
-									<span class="h-20px border-gray-200 border-start ms-3 mx-2"></span>
-									<!--end::Separator-->
-									<!--begin::Description-->
-									<small class="text-muted fs-7 fw-bold my-1 ms-1">Senarai</small>
-									<!--end::Description--></h1>
+									<h1 class="d-flex align-items-center text-dark fw-bolder my-1 fs-3">Users List</h1>
 									<!--end::Title-->
+									<!--begin::Separator-->
+									<span class="h-20px border-gray-200 border-start mx-4"></span>
+									<!--end::Separator-->
+									<!--begin::Breadcrumb-->
+									<ul class="breadcrumb breadcrumb-separatorless fw-bold fs-7 my-1">
+										<!--begin::Item-->
+										<li class="breadcrumb-item text-muted">
+											<a href="index.html" class="text-muted text-hover-primary">Home</a>
+										</li>
+										<!--end::Item-->
+										<!--begin::Item-->
+										<li class="breadcrumb-item">
+											<span class="bullet bg-gray-200 w-5px h-2px"></span>
+										</li>
+										<!--end::Item-->
+										<!--begin::Item-->
+										<li class="breadcrumb-item text-muted">User Management</li>
+										<!--end::Item-->
+										<!--begin::Item-->
+										<li class="breadcrumb-item">
+											<span class="bullet bg-gray-200 w-5px h-2px"></span>
+										</li>
+										<!--end::Item-->
+										<!--begin::Item-->
+										<li class="breadcrumb-item text-muted">Users</li>
+										<!--end::Item-->
+										<!--begin::Item-->
+										<li class="breadcrumb-item">
+											<span class="bullet bg-gray-200 w-5px h-2px"></span>
+										</li>
+										<!--end::Item-->
+										<!--begin::Item-->
+										<li class="breadcrumb-item text-dark">Users List</li>
+										<!--end::Item-->
+									</ul>
+									<!--end::Breadcrumb-->
 								</div>
 								<!--end::Page title-->
-                                <a href="#" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_create_app" id="kt_toolbar_primary_button">Create</a>
+								<!--begin::Actions-->
+								<div class="d-flex align-items-center py-1">
+									<!--begin::Wrapper-->
+									<div class="me-4">
+										<!--begin::Menu-->
+										<a href="#" class="btn btn-sm btn-flex btn-light btn-active-primary fw-bolder" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end" data-kt-menu-flip="top-end">
+										<!--begin::Svg Icon | path: icons/duotone/Text/Filter.svg-->
+										<span class="svg-icon svg-icon-5 svg-icon-gray-500 me-1">
+											<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+												<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+													<rect x="0" y="0" width="24" height="24" />
+													<path d="M5,4 L19,4 C19.2761424,4 19.5,4.22385763 19.5,4.5 C19.5,4.60818511 19.4649111,4.71345191 19.4,4.8 L14,12 L14,20.190983 C14,20.4671254 13.7761424,20.690983 13.5,20.690983 C13.4223775,20.690983 13.3458209,20.6729105 13.2763932,20.6381966 L10,19 L10,12 L4.6,4.8 C4.43431458,4.5790861 4.4790861,4.26568542 4.7,4.1 C4.78654809,4.03508894 4.89181489,4 5,4 Z" fill="#000000" />
+												</g>
+											</svg>
+										</span>
+										<!--end::Svg Icon-->Filter</a>
+										<!--begin::Menu 1-->
+										<div class="menu menu-sub menu-sub-dropdown w-250px w-md-300px" data-kt-menu="true">
+											<!--begin::Header-->
+											<div class="px-7 py-5">
+												<div class="fs-5 text-dark fw-bolder">Filter Options</div>
+											</div>
+											<!--end::Header-->
+											<!--begin::Menu separator-->
+											<div class="separator border-gray-200"></div>
+											<!--end::Menu separator-->
+											<!--begin::Form-->
+											<div class="px-7 py-5">
+												<!--begin::Input group-->
+												<div class="mb-10">
+													<!--begin::Label-->
+													<label class="form-label fw-bold">Status:</label>
+													<!--end::Label-->
+													<!--begin::Input-->
+													<div>
+														<select class="form-select form-select-solid" data-kt-select2="true" data-placeholder="Select option" data-allow-clear="true">
+															<option></option>
+															<option value="1">Approved</option>
+															<option value="2">Pending</option>
+															<option value="2">In Process</option>
+															<option value="2">Rejected</option>
+														</select>
+													</div>
+													<!--end::Input-->
+												</div>
+												<!--end::Input group-->
+												<!--begin::Input group-->
+												<div class="mb-10">
+													<!--begin::Label-->
+													<label class="form-label fw-bold">Member Type:</label>
+													<!--end::Label-->
+													<!--begin::Options-->
+													<div class="d-flex">
+														<!--begin::Options-->
+														<label class="form-check form-check-sm form-check-custom form-check-solid me-5">
+															<input class="form-check-input" type="checkbox" value="1" />
+															<span class="form-check-label">Author</span>
+														</label>
+														<!--end::Options-->
+														<!--begin::Options-->
+														<label class="form-check form-check-sm form-check-custom form-check-solid">
+															<input class="form-check-input" type="checkbox" value="2" checked="checked" />
+															<span class="form-check-label">Customer</span>
+														</label>
+														<!--end::Options-->
+													</div>
+													<!--end::Options-->
+												</div>
+												<!--end::Input group-->
+												<!--begin::Input group-->
+												<div class="mb-10">
+													<!--begin::Label-->
+													<label class="form-label fw-bold">Notifications:</label>
+													<!--end::Label-->
+													<!--begin::Switch-->
+													<div class="form-check form-switch form-switch-sm form-check-custom form-check-solid">
+														<input class="form-check-input" type="checkbox" value="" name="notifications" checked="checked" />
+														<label class="form-check-label">Enabled</label>
+													</div>
+													<!--end::Switch-->
+												</div>
+												<!--end::Input group-->
+												<!--begin::Actions-->
+												<div class="d-flex justify-content-end">
+													<button type="reset" class="btn btn-sm btn-white btn-active-light-primary me-2" data-kt-menu-dismiss="true">Reset</button>
+													<button type="submit" class="btn btn-sm btn-primary" data-kt-menu-dismiss="true">Apply</button>
+												</div>
+												<!--end::Actions-->
+											</div>
+											<!--end::Form-->
+										</div>
+										<!--end::Menu 1-->
+										<!--end::Menu-->
+									</div>
+									<!--end::Wrapper-->
+									<!--begin::Button-->
+									<a href="#" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_create_app" id="kt_toolbar_primary_button">Create</a>
+									<!--end::Button-->
+								</div>
+								<!--end::Actions-->
 							</div>
-                            
 							<!--end::Container-->
 						</div>
 						<!--end::Toolbar-->
@@ -110,10 +241,319 @@ License: For each use you must have a valid license purchased only from above li
 						<div class="post d-flex flex-column-fluid" id="kt_post">
 							<!--begin::Container-->
 							<div id="kt_content_container" class="container">
-								<!--begin::Row-->
-								<div class="row gy-5 g-xl-8">
+								<!--begin::Card-->
+								<div class="card">
+									<!--begin::Card header-->
+									<div class="card-header border-0 pt-6">
+										<!--begin::Card title-->
+										<div class="card-title">
+											<!--begin::Search-->
+											<div class="d-flex align-items-center position-relative my-1">
+												<!--begin::Svg Icon | path: icons/duotone/General/Search.svg-->
+												<span class="svg-icon svg-icon-1 position-absolute ms-6">
+													<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+														<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+															<rect x="0" y="0" width="24" height="24" />
+															<path d="M14.2928932,16.7071068 C13.9023689,16.3165825 13.9023689,15.6834175 14.2928932,15.2928932 C14.6834175,14.9023689 15.3165825,14.9023689 15.7071068,15.2928932 L19.7071068,19.2928932 C20.0976311,19.6834175 20.0976311,20.3165825 19.7071068,20.7071068 C19.3165825,21.0976311 18.6834175,21.0976311 18.2928932,20.7071068 L14.2928932,16.7071068 Z" fill="#000000" fill-rule="nonzero" opacity="0.3" />
+															<path d="M11,16 C13.7614237,16 16,13.7614237 16,11 C16,8.23857625 13.7614237,6 11,6 C8.23857625,6 6,8.23857625 6,11 C6,13.7614237 8.23857625,16 11,16 Z M11,18 C7.13400675,18 4,14.8659932 4,11 C4,7.13400675 7.13400675,4 11,4 C14.8659932,4 18,7.13400675 18,11 C18,14.8659932 14.8659932,18 11,18 Z" fill="#000000" fill-rule="nonzero" />
+														</g>
+													</svg>
+												</span>
+												<!--end::Svg Icon-->
+												<input type="text" data-kt-user-table-filter="search" class="form-control form-control-solid w-250px ps-14" placeholder="Search Product" />
+											</div>
+											<!--end::Search-->
+										</div>
+										<!--begin::Card title-->
+										<!--begin::Card toolbar-->
+										<div class="card-toolbar">
+											<!--begin::Toolbar-->
+											<div class="d-flex justify-content-end" data-kt-user-table-toolbar="base">
+												<!--begin::Filter-->
+												<button type="button" class="btn btn-light-primary me-3" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end" data-kt-menu-flip="top-end">
+												<!--begin::Svg Icon | path: icons/duotone/Text/Filter.svg-->
+												<span class="svg-icon svg-icon-2">
+													<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+														<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+															<rect x="0" y="0" width="24" height="24" />
+															<path d="M5,4 L19,4 C19.2761424,4 19.5,4.22385763 19.5,4.5 C19.5,4.60818511 19.4649111,4.71345191 19.4,4.8 L14,12 L14,20.190983 C14,20.4671254 13.7761424,20.690983 13.5,20.690983 C13.4223775,20.690983 13.3458209,20.6729105 13.2763932,20.6381966 L10,19 L10,12 L4.6,4.8 C4.43431458,4.5790861 4.4790861,4.26568542 4.7,4.1 C4.78654809,4.03508894 4.89181489,4 5,4 Z" fill="#000000" />
+														</g>
+													</svg>
+												</span>
+												<!--end::Svg Icon-->Filter</button>
+												<!--begin::Menu 1-->
+												<div class="menu menu-sub menu-sub-dropdown w-300px w-md-325px" data-kt-menu="true">
+													<!--begin::Header-->
+													<div class="px-7 py-5">
+														<div class="fs-5 text-dark fw-bolder">Filter Options</div>
+													</div>
+													<!--end::Header-->
+													<!--begin::Separator-->
+													<div class="separator border-gray-200"></div>
+													<!--end::Separator-->
+													<!--begin::Content-->
+													<div class="px-7 py-5" data-kt-user-table-filter="form">
+														<!--begin::Input group-->
+														<div class="mb-10">
+															<label class="form-label fs-6 fw-bold">Role:</label>
+															<select class="form-select form-select-solid fw-bolder" data-kt-select2="true" data-placeholder="Select option" data-allow-clear="true" data-kt-user-table-filter="role" data-hide-search="true">
+																<option></option>
+																<option value="Administrator">Administrator</option>
+																<option value="Analyst">Analyst</option>
+																<option value="Developer">Developer</option>
+																<option value="Support">Support</option>
+																<option value="Trial">Trial</option>
+															</select>
+														</div>
+														<!--end::Input group-->
+														<!--begin::Input group-->
+														<div class="mb-10">
+															<label class="form-label fs-6 fw-bold">Two Step Verification:</label>
+															<select class="form-select form-select-solid fw-bolder" data-kt-select2="true" data-placeholder="Select option" data-allow-clear="true" data-kt-user-table-filter="two-step" data-hide-search="true">
+																<option></option>
+																<option value="Enabled">Enabled</option>
+															</select>
+														</div>
+														<!--end::Input group-->
+														<!--begin::Actions-->
+														<div class="d-flex justify-content-end">
+															<button type="reset" class="btn btn-white btn-active-light-primary fw-bold me-2 px-6" data-kt-menu-dismiss="true" data-kt-user-table-filter="reset">Reset</button>
+															<button type="submit" class="btn btn-primary fw-bold px-6" data-kt-menu-dismiss="true" data-kt-user-table-filter="filter">Apply</button>
+														</div>
+														<!--end::Actions-->
+													</div>
+													<!--end::Content-->
+												</div>
+												<!--end::Menu 1-->
+												<!--end::Filter-->
+												<!--begin::Export-->
+												<button type="button" class="btn btn-light-primary me-3" data-bs-toggle="modal" data-bs-target="#kt_modal_export_users">
+												<!--begin::Svg Icon | path: icons/duotone/Files/Export.svg-->
+												<span class="svg-icon svg-icon-2">
+													<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+														<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+															<rect x="0" y="0" width="24" height="24" />
+															<path d="M17,8 C16.4477153,8 16,7.55228475 16,7 C16,6.44771525 16.4477153,6 17,6 L18,6 C20.209139,6 22,7.790861 22,10 L22,18 C22,20.209139 20.209139,22 18,22 L6,22 C3.790861,22 2,20.209139 2,18 L2,9.99305689 C2,7.7839179 3.790861,5.99305689 6,5.99305689 L7.00000482,5.99305689 C7.55228957,5.99305689 8.00000482,6.44077214 8.00000482,6.99305689 C8.00000482,7.54534164 7.55228957,7.99305689 7.00000482,7.99305689 L6,7.99305689 C4.8954305,7.99305689 4,8.88848739 4,9.99305689 L4,18 C4,19.1045695 4.8954305,20 6,20 L18,20 C19.1045695,20 20,19.1045695 20,18 L20,10 C20,8.8954305 19.1045695,8 18,8 L17,8 Z" fill="#000000" fill-rule="nonzero" opacity="0.3" />
+															<rect fill="#000000" opacity="0.3" transform="translate(12.000000, 8.000000) scale(1, -1) rotate(-180.000000) translate(-12.000000, -8.000000)" x="11" y="2" width="2" height="12" rx="1" />
+															<path d="M12,2.58578644 L14.2928932,0.292893219 C14.6834175,-0.0976310729 15.3165825,-0.0976310729 15.7071068,0.292893219 C16.0976311,0.683417511 16.0976311,1.31658249 15.7071068,1.70710678 L12.7071068,4.70710678 C12.3165825,5.09763107 11.6834175,5.09763107 11.2928932,4.70710678 L8.29289322,1.70710678 C7.90236893,1.31658249 7.90236893,0.683417511 8.29289322,0.292893219 C8.68341751,-0.0976310729 9.31658249,-0.0976310729 9.70710678,0.292893219 L12,2.58578644 Z" fill="#000000" fill-rule="nonzero" transform="translate(12.000000, 2.500000) scale(1, -1) translate(-12.000000, -2.500000)" />
+														</g>
+													</svg>
+												</span>
+												<!--end::Svg Icon-->Export</button>
+												<!--end::Export-->
+												<!--begin::Add user-->
+												<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal_add_product">
+												<!--begin::Svg Icon | path: icons/duotone/Navigation/Plus.svg-->
+												<span class="svg-icon svg-icon-2">
+													<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+														<rect fill="#000000" x="4" y="11" width="16" height="2" rx="1" />
+														<rect fill="#000000" opacity="0.5" transform="translate(12.000000, 12.000000) rotate(-270.000000) translate(-12.000000, -12.000000)" x="4" y="11" width="16" height="2" rx="1" />
+													</svg>
+												</span>
+												<!--end::Svg Icon-->Tambah Produk</button>
+												<!--end::Add user-->
+											</div>
+											<!--end::Toolbar-->
+											<!--begin::Group actions-->
+											<div class="d-flex justify-content-end align-items-center d-none" data-kt-user-table-toolbar="selected">
+												<div class="fw-bolder me-5">
+												<span class="me-2" data-kt-user-table-select="selected_count"></span>Selected</div>
+												<button type="button" class="btn btn-danger" data-kt-user-table-select="delete_selected">Delete Selected</button>
+											</div>
+											<!--end::Group actions-->
+											<!--begin::Modal - Adjust Balance-->
+											<div class="modal fade" id="kt_modal_export_users" tabindex="-1" aria-hidden="true">
+												<!--begin::Modal dialog-->
+												<div class="modal-dialog modal-dialog-centered mw-650px">
+													<!--begin::Modal content-->
+													<div class="modal-content">
+														<!--begin::Modal header-->
+														<div class="modal-header">
+															<!--begin::Modal title-->
+															<h2 class="fw-bolder">Export Users</h2>
+															<!--end::Modal title-->
+															<!--begin::Close-->
+															<div class="btn btn-icon btn-sm btn-active-icon-primary" data-kt-users-modal-action="close">
+																<!--begin::Svg Icon | path: icons/duotone/Navigation/Close.svg-->
+																<span class="svg-icon svg-icon-1">
+																	<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+																		<g transform="translate(12.000000, 12.000000) rotate(-45.000000) translate(-12.000000, -12.000000) translate(4.000000, 4.000000)" fill="#000000">
+																			<rect fill="#000000" x="0" y="7" width="16" height="2" rx="1" />
+																			<rect fill="#000000" opacity="0.5" transform="translate(8.000000, 8.000000) rotate(-270.000000) translate(-8.000000, -8.000000)" x="0" y="7" width="16" height="2" rx="1" />
+																		</g>
+																	</svg>
+																</span>
+																<!--end::Svg Icon-->
+															</div>
+															<!--end::Close-->
+														</div>
+														<!--end::Modal header-->
+														<!--begin::Modal body-->
+														<div class="modal-body scroll-y mx-5 mx-xl-15 my-7">
+															<!--begin::Form-->
+															<form id="kt_modal_export_users_form" class="form" action="#">
+																<!--begin::Input group-->
+																<div class="fv-row mb-10">
+																	<!--begin::Label-->
+																	<label class="fs-6 fw-bold form-label mb-2">Select Roles:</label>
+																	<!--end::Label-->
+																	<!--begin::Input-->
+																	<select name="role" data-control="select2" data-placeholder="Select a role" data-hide-search="true" class="form-select form-select-solid fw-bolder">
+																		<option></option>
+																		<option value="Administrator">Administrator</option>
+																		<option value="Analyst">Analyst</option>
+																		<option value="Developer">Developer</option>
+																		<option value="Support">Support</option>
+																		<option value="Trial">Trial</option>
+																	</select>
+																	<!--end::Input-->
+																</div>
+																<!--end::Input group-->
+																<!--begin::Input group-->
+																<div class="fv-row mb-10">
+																	<!--begin::Label-->
+																	<label class="required fs-6 fw-bold form-label mb-2">Select Export Format:</label>
+																	<!--end::Label-->
+																	<!--begin::Input-->
+																	<select name="format" data-control="select2" data-placeholder="Select a format" data-hide-search="true" class="form-select form-select-solid fw-bolder">
+																		<option></option>
+																		<option value="excel">Excel</option>
+																		<option value="pdf">PDF</option>
+																		<option value="cvs">CVS</option>
+																		<option value="zip">ZIP</option>
+																	</select>
+																	<!--end::Input-->
+																</div>
+																<!--end::Input group-->
+																<!--begin::Actions-->
+																<div class="text-center">
+																	<button type="reset" class="btn btn-white me-3" data-kt-users-modal-action="cancel">Discard</button>
+																	<button type="submit" class="btn btn-primary" data-kt-users-modal-action="submit">
+																		<span class="indicator-label">Submit</span>
+																		<span class="indicator-progress">Please wait...
+																		<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+																	</button>
+																</div>
+																<!--end::Actions-->
+															</form>
+															<!--end::Form-->
+														</div>
+														<!--end::Modal body-->
+													</div>
+													<!--end::Modal content-->
+												</div>
+												<!--end::Modal dialog-->
+											</div>
+											<!--end::Modal - New Card-->
+											<!--begin::Modal - Add task-->
+											<div class="modal fade" id="modal_add_product" tabindex="-1" aria-hidden="true">
+												<!--begin::Modal dialog-->
+												<div class="modal-dialog modal-dialog-centered mw-650px">
+													<!--begin::Modal content-->
+													<div class="modal-content">
+														<!--begin::Modal header-->
+														<div class="modal-header" id="kt_modal_add_user_header">
+															<!--begin::Modal title-->
+															<h2 class="fw-bolder">Tambah Produk</h2>
+															<!--end::Modal title-->
+															<!--begin::Close-->
+															<div class="btn btn-icon btn-sm btn-active-icon-primary" data-kt-users-modal-action="close">
+																<!--begin::Svg Icon | path: icons/duotone/Navigation/Close.svg-->
+																<span class="svg-icon svg-icon-1">
+																	<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+																		<g transform="translate(12.000000, 12.000000) rotate(-45.000000) translate(-12.000000, -12.000000) translate(4.000000, 4.000000)" fill="#000000">
+																			<rect fill="#000000" x="0" y="7" width="16" height="2" rx="1" />
+																			<rect fill="#000000" opacity="0.5" transform="translate(8.000000, 8.000000) rotate(-270.000000) translate(-8.000000, -8.000000)" x="0" y="7" width="16" height="2" rx="1" />
+																		</g>
+																	</svg>
+																</span>
+																<!--end::Svg Icon-->
+															</div>
+															<!--end::Close-->
+														</div>
+														<!--end::Modal header-->
+														<!--begin::Modal body-->
+														<div class="modal-body scroll-y mx-5 mx-xl-15 my-7">
+															<!--begin::Form-->
+															<form id="add_product_form" class="form" action="#">
+																<!--begin::Scroll-->
+																<div class="d-flex flex-column scroll-y me-n7 pe-7" id="kt_modal_add_user_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_add_user_header" data-kt-scroll-wrappers="#kt_modal_add_user_scroll" data-kt-scroll-offset="300px">
+
+																	<!--begin::Input group-->
+																	<div class="fv-row mb-7">
+																		<!--begin::Label-->
+																		<label class="required fw-bold fs-6 mb-2">Nama Produk</label>
+																		<!--end::Label-->
+																		<!--begin::Input-->
+																		<input type="text" name="product_name" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Nama Produk"/>
+																		<!--end::Input-->
+																	</div>
+																	<!--end::Input group-->
+																	<!--begin::Input group-->
+																	<div class="fv-row mb-7">
+																		<!--begin::Label-->
+																		<label class="required fw-bold fs-6 mb-2">SKU</label>
+																		<!--end::Label-->
+																		<!--begin::Input-->
+																		<input type="email" name="sku_id" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="SKU" />
+																		<!--end::Input-->
+																	</div>
+
+																</div>
+																<!--end::Scroll-->
+																<!--begin::Actions-->
+																<div class="text-center pt-15">
+																	<button type="reset" class="btn btn-white me-3" data-kt-users-modal-action="cancel">Batal</button>
+																	<button type="submit" class="btn btn-primary" data-kt-users-modal-action="submit">
+																		<span class="indicator-label">Hantar</span>
+																		<span class="indicator-progress">Sila Tunggu...
+																		<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+																	</button>
+																</div>
+																<!--end::Actions-->
+															</form>
+															<!--end::Form-->
+														</div>
+														<!--end::Modal body-->
+													</div>
+													<!--end::Modal content-->
+												</div>
+												<!--end::Modal dialog-->
+											</div>
+											<!--end::Modal - Add task-->
+										</div>
+										<!--end::Card toolbar-->
+									</div>
+									<!--end::Card header-->
+									<!--begin::Card body-->
+									<div class="card-body pt-0">
+										<!--begin::Table-->
+										<table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_table_users">
+											<!--begin::Table head-->
+											<thead>
+												<!--begin::Table row-->
+												<tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
+													<th class="w-10px pe-2">No.</th>
+													<th class="min-w-125px">SKU</th>
+													<th class="min-w-125px">Nama</th>
+													<th class="min-w-125px">Status</th>
+													<th class="min-w-125px">Harga</th>
+													<th class="min-w-125px">Kuantiti</th>
+													<th class="text-end min-w-100px">Tindakan</th>
+												</tr>
+												<!--end::Table row-->
+											</thead>
+											<!--end::Table head-->
+											<!--begin::Table body-->
+											<tbody class="text-gray-600 fw-bold">
+											</tbody>
+											<!--end::Table body-->
+										</table>
+										<!--end::Table-->
+									</div>
+									<!--end::Card body-->
 								</div>
-								<!--end::Row-->
+								<!--end::Card-->
 							</div>
 							<!--end::Container-->
 						</div>
@@ -154,7 +594,644 @@ License: For each use you must have a valid license purchased only from above li
 		</div>
 		<!--end::Root-->
 		<!--begin::Drawers-->
-
+		<!--begin::Activities drawer-->
+		<div id="kt_activities" class="bg-white" data-kt-drawer="true" data-kt-drawer-name="activities" data-kt-drawer-activate="true" data-kt-drawer-overlay="true" data-kt-drawer-width="{default:'300px', 'lg': '900px'}" data-kt-drawer-direction="end" data-kt-drawer-toggle="#kt_activities_toggle" data-kt-drawer-close="#kt_activities_close">
+			<div class="card shadow-none">
+				<!--begin::Header-->
+				<div class="card-header" id="kt_activities_header">
+					<h3 class="card-title fw-bolder text-dark">Activity Logs</h3>
+					<div class="card-toolbar">
+						<button type="button" class="btn btn-sm btn-icon btn-active-light-primary me-n5" id="kt_activities_close">
+							<!--begin::Svg Icon | path: icons/duotone/Navigation/Close.svg-->
+							<span class="svg-icon svg-icon-1">
+								<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+									<g transform="translate(12.000000, 12.000000) rotate(-45.000000) translate(-12.000000, -12.000000) translate(4.000000, 4.000000)" fill="#000000">
+										<rect fill="#000000" x="0" y="7" width="16" height="2" rx="1" />
+										<rect fill="#000000" opacity="0.5" transform="translate(8.000000, 8.000000) rotate(-270.000000) translate(-8.000000, -8.000000)" x="0" y="7" width="16" height="2" rx="1" />
+									</g>
+								</svg>
+							</span>
+							<!--end::Svg Icon-->
+						</button>
+					</div>
+				</div>
+				<!--end::Header-->
+				<!--begin::Body-->
+				<div class="card-body position-relative" id="kt_activities_body">
+					<!--begin::Content-->
+					<div id="kt_activities_scroll" class="position-relative scroll-y me-n5 pe-5" data-kt-scroll="true" data-kt-scroll-height="auto" data-kt-scroll-wrappers="#kt_activities_body" data-kt-scroll-dependencies="#kt_activities_header, #kt_activities_footer" data-kt-scroll-offset="5px">
+						<!--begin::Timeline items-->
+						<div class="timeline">
+							<!--begin::Timeline item-->
+							<div class="timeline-item">
+								<!--begin::Timeline line-->
+								<div class="timeline-line w-40px"></div>
+								<!--end::Timeline line-->
+								<!--begin::Timeline icon-->
+								<div class="timeline-icon symbol symbol-circle symbol-40px me-4">
+									<div class="symbol-label bg-light">
+										<!--begin::Svg Icon | path: icons/duotone/Communication/Chat2.svg-->
+										<span class="svg-icon svg-icon-2 svg-icon-gray-500">
+											<svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+												<polygon fill="#000000" opacity="0.3" points="5 15 3 21.5 9.5 19.5" />
+												<path d="M13.5,21 C8.25329488,21 4,16.7467051 4,11.5 C4,6.25329488 8.25329488,2 13.5,2 C18.7467051,2 23,6.25329488 23,11.5 C23,16.7467051 18.7467051,21 13.5,21 Z M9,8 C8.44771525,8 8,8.44771525 8,9 C8,9.55228475 8.44771525,10 9,10 L18,10 C18.5522847,10 19,9.55228475 19,9 C19,8.44771525 18.5522847,8 18,8 L9,8 Z M9,12 C8.44771525,12 8,12.4477153 8,13 C8,13.5522847 8.44771525,14 9,14 L14,14 C14.5522847,14 15,13.5522847 15,13 C15,12.4477153 14.5522847,12 14,12 L9,12 Z" fill="#000000" />
+											</svg>
+										</span>
+										<!--end::Svg Icon-->
+									</div>
+								</div>
+								<!--end::Timeline icon-->
+								<!--begin::Timeline content-->
+								<div class="timeline-content mb-10 mt-n1">
+									<!--begin::Timeline heading-->
+									<div class="pe-3 mb-5">
+										<!--begin::Title-->
+										<div class="fs-5 fw-bold mb-2">There are 2 new tasks for you in “AirPlus Mobile APp” project:</div>
+										<!--end::Title-->
+										<!--begin::Description-->
+										<div class="d-flex align-items-center mt-1 fs-6">
+											<!--begin::Info-->
+											<div class="text-muted me-2 fs-7">Added at 4:23 PM by</div>
+											<!--end::Info-->
+											<!--begin::User-->
+											<div class="symbol symbol-circle symbol-25px" data-bs-toggle="tooltip" data-bs-boundary="window" data-bs-placement="top" title="Nina Nilson">
+												<img src="assets/media/avatars/150-11.jpg" alt="img" />
+											</div>
+											<!--end::User-->
+										</div>
+										<!--end::Description-->
+									</div>
+									<!--end::Timeline heading-->
+									<!--begin::Timeline details-->
+									<div class="overflow-auto pb-5">
+										<!--begin::Record-->
+										<div class="d-flex align-items-center border border-dashed border-gray-300 rounded min-w-750px px-7 py-3 mb-5">
+											<!--begin::Title-->
+											<a href="#" class="fs-5 text-dark text-hover-primary fw-bold w-375px min-w-200px">Meeting with customer</a>
+											<!--end::Title-->
+											<!--begin::Label-->
+											<div class="min-w-175px pe-2">
+												<span class="badge badge-light text-muted">Application Design</span>
+											</div>
+											<!--end::Label-->
+											<!--begin::Users-->
+											<div class="symbol-group symbol-hover flex-nowrap flex-grow-1 min-w-100px pe-2">
+												<!--begin::User-->
+												<div class="symbol symbol-circle symbol-25px">
+													<img src="assets/media/avatars/150-3.jpg" alt="img" />
+												</div>
+												<!--end::User-->
+												<!--begin::User-->
+												<div class="symbol symbol-circle symbol-25px">
+													<img src="assets/media/avatars/150-11.jpg" alt="img" />
+												</div>
+												<!--end::User-->
+												<!--begin::User-->
+												<div class="symbol symbol-circle symbol-25px">
+													<div class="symbol-label fs-8 fw-bold bg-primary text-inverse-primary">A</div>
+												</div>
+												<!--end::User-->
+											</div>
+											<!--end::Users-->
+											<!--begin::Progress-->
+											<div class="min-w-125px pe-2">
+												<span class="badge badge-light-primary">In Progress</span>
+											</div>
+											<!--end::Progress-->
+											<!--begin::Action-->
+											<a href="#" class="btn btn-sm btn-light btn-active-light-primary">View</a>
+											<!--end::Action-->
+										</div>
+										<!--end::Record-->
+										<!--begin::Record-->
+										<div class="d-flex align-items-center border border-dashed border-gray-300 rounded min-w-750px px-7 py-3 mb-0">
+											<!--begin::Title-->
+											<a href="#" class="fs-5 text-dark text-hover-primary fw-bold w-375px min-w-200px">Project Delivery Preparation</a>
+											<!--end::Title-->
+											<!--begin::Label-->
+											<div class="min-w-175px">
+												<span class="badge badge-light text-muted">CRM System Development</span>
+											</div>
+											<!--end::Label-->
+											<!--begin::Users-->
+											<div class="symbol-group symbol-hover flex-nowrap flex-grow-1 min-w-100px">
+												<!--begin::User-->
+												<div class="symbol symbol-circle symbol-25px">
+													<img src="assets/media/avatars/150-5.jpg" alt="img" />
+												</div>
+												<!--end::User-->
+												<!--begin::User-->
+												<div class="symbol symbol-circle symbol-25px">
+													<div class="symbol-label fs-8 fw-bold bg-success text-inverse-primary">B</div>
+												</div>
+												<!--end::User-->
+											</div>
+											<!--end::Users-->
+											<!--begin::Progress-->
+											<div class="min-w-125px">
+												<span class="badge badge-light-success">Completed</span>
+											</div>
+											<!--end::Progress-->
+											<!--begin::Action-->
+											<a href="#" class="btn btn-sm btn-light btn-active-light-primary">View</a>
+											<!--end::Action-->
+										</div>
+										<!--end::Record-->
+									</div>
+									<!--end::Timeline details-->
+								</div>
+								<!--end::Timeline content-->
+							</div>
+							<!--end::Timeline item-->
+							<!--begin::Timeline item-->
+							<div class="timeline-item">
+								<!--begin::Timeline line-->
+								<div class="timeline-line w-40px"></div>
+								<!--end::Timeline line-->
+								<!--begin::Timeline icon-->
+								<div class="timeline-icon symbol symbol-circle symbol-40px">
+									<div class="symbol-label bg-light">
+										<!--begin::Svg Icon | path: icons/duotone/Communication/Thumbtack.svg-->
+										<span class="svg-icon svg-icon-2 svg-icon-gray-500">
+											<svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+												<path d="M11.6734943,8.3307728 L14.9993074,6.09979492 L14.1213255,5.22181303 C13.7308012,4.83128874 13.7308012,4.19812376 14.1213255,3.80759947 L15.535539,2.39338591 C15.9260633,2.00286161 16.5592283,2.00286161 16.9497526,2.39338591 L22.6066068,8.05024016 C22.9971311,8.44076445 22.9971311,9.07392943 22.6066068,9.46445372 L21.1923933,10.8786673 C20.801869,11.2691916 20.168704,11.2691916 19.7781797,10.8786673 L18.9002333,10.0007208 L16.6692373,13.3265608 C16.9264145,14.2523264 16.9984943,15.2320236 16.8664372,16.2092466 L16.4344698,19.4058049 C16.360509,19.9531149 15.8568695,20.3368403 15.3095595,20.2628795 C15.0925691,20.2335564 14.8912006,20.1338238 14.7363706,19.9789938 L5.02099894,10.2636221 C4.63047465,9.87309784 4.63047465,9.23993286 5.02099894,8.84940857 C5.17582897,8.69457854 5.37719743,8.59484594 5.59418783,8.56552292 L8.79074617,8.13355557 C9.76799113,8.00149544 10.7477104,8.0735815 11.6734943,8.3307728 Z" fill="#000000" />
+												<polygon fill="#000000" opacity="0.3" transform="translate(7.050253, 17.949747) rotate(-315.000000) translate(-7.050253, -17.949747)" points="5.55025253 13.9497475 5.55025253 19.6640332 7.05025253 21.9497475 8.55025253 19.6640332 8.55025253 13.9497475" />
+											</svg>
+										</span>
+										<!--end::Svg Icon-->
+									</div>
+								</div>
+								<!--end::Timeline icon-->
+								<!--begin::Timeline content-->
+								<div class="timeline-content mb-10 mt-n2">
+									<!--begin::Timeline heading-->
+									<div class="overflow-auto pe-3">
+										<!--begin::Title-->
+										<div class="fs-5 fw-bold mb-2">Invitation for crafting engaging designs that speak human workshop</div>
+										<!--end::Title-->
+										<!--begin::Description-->
+										<div class="d-flex align-items-center mt-1 fs-6">
+											<!--begin::Info-->
+											<div class="text-muted me-2 fs-7">Sent at 4:23 PM by</div>
+											<!--end::Info-->
+											<!--begin::User-->
+											<div class="symbol symbol-circle symbol-25px" data-bs-toggle="tooltip" data-bs-boundary="window" data-bs-placement="top" title="Alan Nilson">
+												<img src="assets/media/avatars/150-2.jpg" alt="img" />
+											</div>
+											<!--end::User-->
+										</div>
+										<!--end::Description-->
+									</div>
+									<!--end::Timeline heading-->
+								</div>
+								<!--end::Timeline content-->
+							</div>
+							<!--end::Timeline item-->
+							<!--begin::Timeline item-->
+							<div class="timeline-item">
+								<!--begin::Timeline line-->
+								<div class="timeline-line w-40px"></div>
+								<!--end::Timeline line-->
+								<!--begin::Timeline icon-->
+								<div class="timeline-icon symbol symbol-circle symbol-40px">
+									<div class="symbol-label bg-light">
+										<!--begin::Svg Icon | path: icons/duotone/General/Attachment2.svg-->
+										<span class="svg-icon svg-icon-2 svg-icon-gray-500">
+											<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+												<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+													<rect x="0" y="0" width="24" height="24" />
+													<path d="M11.7573593,15.2426407 L8.75735931,15.2426407 C8.20507456,15.2426407 7.75735931,15.6903559 7.75735931,16.2426407 C7.75735931,16.7949254 8.20507456,17.2426407 8.75735931,17.2426407 L11.7573593,17.2426407 L11.7573593,18.2426407 C11.7573593,19.3472102 10.8619288,20.2426407 9.75735931,20.2426407 L5.75735931,20.2426407 C4.65278981,20.2426407 3.75735931,19.3472102 3.75735931,18.2426407 L3.75735931,14.2426407 C3.75735931,13.1380712 4.65278981,12.2426407 5.75735931,12.2426407 L9.75735931,12.2426407 C10.8619288,12.2426407 11.7573593,13.1380712 11.7573593,14.2426407 L11.7573593,15.2426407 Z" fill="#000000" opacity="0.3" transform="translate(7.757359, 16.242641) rotate(-45.000000) translate(-7.757359, -16.242641)" />
+													<path d="M12.2426407,8.75735931 L15.2426407,8.75735931 C15.7949254,8.75735931 16.2426407,8.30964406 16.2426407,7.75735931 C16.2426407,7.20507456 15.7949254,6.75735931 15.2426407,6.75735931 L12.2426407,6.75735931 L12.2426407,5.75735931 C12.2426407,4.65278981 13.1380712,3.75735931 14.2426407,3.75735931 L18.2426407,3.75735931 C19.3472102,3.75735931 20.2426407,4.65278981 20.2426407,5.75735931 L20.2426407,9.75735931 C20.2426407,10.8619288 19.3472102,11.7573593 18.2426407,11.7573593 L14.2426407,11.7573593 C13.1380712,11.7573593 12.2426407,10.8619288 12.2426407,9.75735931 L12.2426407,8.75735931 Z" fill="#000000" transform="translate(16.242641, 7.757359) rotate(-45.000000) translate(-16.242641, -7.757359)" />
+													<path d="M5.89339828,3.42893219 C6.44568303,3.42893219 6.89339828,3.87664744 6.89339828,4.42893219 L6.89339828,6.42893219 C6.89339828,6.98121694 6.44568303,7.42893219 5.89339828,7.42893219 C5.34111353,7.42893219 4.89339828,6.98121694 4.89339828,6.42893219 L4.89339828,4.42893219 C4.89339828,3.87664744 5.34111353,3.42893219 5.89339828,3.42893219 Z M11.4289322,5.13603897 C11.8194565,5.52656326 11.8194565,6.15972824 11.4289322,6.55025253 L10.0147186,7.96446609 C9.62419433,8.35499039 8.99102936,8.35499039 8.60050506,7.96446609 C8.20998077,7.5739418 8.20998077,6.94077682 8.60050506,6.55025253 L10.0147186,5.13603897 C10.4052429,4.74551468 11.0384079,4.74551468 11.4289322,5.13603897 Z M0.600505063,5.13603897 C0.991029355,4.74551468 1.62419433,4.74551468 2.01471863,5.13603897 L3.42893219,6.55025253 C3.81945648,6.94077682 3.81945648,7.5739418 3.42893219,7.96446609 C3.0384079,8.35499039 2.40524292,8.35499039 2.01471863,7.96446609 L0.600505063,6.55025253 C0.209980772,6.15972824 0.209980772,5.52656326 0.600505063,5.13603897 Z" fill="#000000" opacity="0.3" transform="translate(6.014719, 5.843146) rotate(-45.000000) translate(-6.014719, -5.843146)" />
+													<path d="M17.9142136,15.4497475 C18.4664983,15.4497475 18.9142136,15.8974627 18.9142136,16.4497475 L18.9142136,18.4497475 C18.9142136,19.0020322 18.4664983,19.4497475 17.9142136,19.4497475 C17.3619288,19.4497475 16.9142136,19.0020322 16.9142136,18.4497475 L16.9142136,16.4497475 C16.9142136,15.8974627 17.3619288,15.4497475 17.9142136,15.4497475 Z M23.4497475,17.1568542 C23.8402718,17.5473785 23.8402718,18.1805435 23.4497475,18.5710678 L22.0355339,19.9852814 C21.6450096,20.3758057 21.0118446,20.3758057 20.6213203,19.9852814 C20.2307961,19.5947571 20.2307961,18.9615921 20.6213203,18.5710678 L22.0355339,17.1568542 C22.4260582,16.76633 23.0592232,16.76633 23.4497475,17.1568542 Z M12.6213203,17.1568542 C13.0118446,16.76633 13.6450096,16.76633 14.0355339,17.1568542 L15.4497475,18.5710678 C15.8402718,18.9615921 15.8402718,19.5947571 15.4497475,19.9852814 C15.0592232,20.3758057 14.4260582,20.3758057 14.0355339,19.9852814 L12.6213203,18.5710678 C12.2307961,18.1805435 12.2307961,17.5473785 12.6213203,17.1568542 Z" fill="#000000" opacity="0.3" transform="translate(18.035534, 17.863961) scale(1, -1) rotate(45.000000) translate(-18.035534, -17.863961)" />
+												</g>
+											</svg>
+										</span>
+										<!--end::Svg Icon-->
+									</div>
+								</div>
+								<!--end::Timeline icon-->
+								<!--begin::Timeline content-->
+								<div class="timeline-content mb-10 mt-n1">
+									<!--begin::Timeline heading-->
+									<div class="mb-5 pe-3">
+										<!--begin::Title-->
+										<a href="#" class="fs-5 fw-bold text-gray-800 text-hover-primary mb-2">3 New Incoming Project Files:</a>
+										<!--end::Title-->
+										<!--begin::Description-->
+										<div class="d-flex align-items-center mt-1 fs-6">
+											<!--begin::Info-->
+											<div class="text-muted me-2 fs-7">Sent at 10:30 PM by</div>
+											<!--end::Info-->
+											<!--begin::User-->
+											<div class="symbol symbol-circle symbol-25px" data-bs-toggle="tooltip" data-bs-boundary="window" data-bs-placement="top" title="Jan Hummer">
+												<img src="assets/media/avatars/150-6.jpg" alt="img" />
+											</div>
+											<!--end::User-->
+										</div>
+										<!--end::Description-->
+									</div>
+									<!--end::Timeline heading-->
+									<!--begin::Timeline details-->
+									<div class="overflow-auto pb-5">
+										<div class="d-flex align-items-center border border-dashed border-gray-300 rounded min-w-700px p-5">
+											<!--begin::Item-->
+											<div class="d-flex flex-aligns-center pe-10 pe-lg-20">
+												<!--begin::Icon-->
+												<img alt="" class="w-30px me-3" src="assets/media/svg/files/pdf.svg" />
+												<!--end::Icon-->
+												<!--begin::Info-->
+												<div class="ms-1 fw-bold">
+													<!--begin::Desc-->
+													<a href="#" class="fs-6 text-hover-primary fw-bolder">Finance KPI App Guidelines</a>
+													<!--end::Desc-->
+													<!--begin::Number-->
+													<div class="text-gray-400">1.9mb</div>
+													<!--end::Number-->
+												</div>
+												<!--begin::Info-->
+											</div>
+											<!--end::Item-->
+											<!--begin::Item-->
+											<div class="d-flex flex-aligns-center pe-10 pe-lg-20">
+												<!--begin::Icon-->
+												<img alt="" class="w-30px me-3" src="assets/media/svg/files/doc.svg" />
+												<!--end::Icon-->
+												<!--begin::Info-->
+												<div class="ms-1 fw-bold">
+													<!--begin::Desc-->
+													<a href="#" class="fs-6 text-hover-primary fw-bolder">Client UAT Testing Results</a>
+													<!--end::Desc-->
+													<!--begin::Number-->
+													<div class="text-gray-400">18kb</div>
+													<!--end::Number-->
+												</div>
+												<!--end::Info-->
+											</div>
+											<!--end::Item-->
+											<!--begin::Item-->
+											<div class="d-flex flex-aligns-center">
+												<!--begin::Icon-->
+												<img alt="" class="w-30px me-3" src="assets/media/svg/files/css.svg" />
+												<!--end::Icon-->
+												<!--begin::Info-->
+												<div class="ms-1 fw-bold">
+													<!--begin::Desc-->
+													<a href="#" class="fs-6 text-hover-primary fw-bolder">Finance Reports</a>
+													<!--end::Desc-->
+													<!--begin::Number-->
+													<div class="text-gray-400">20mb</div>
+													<!--end::Number-->
+												</div>
+												<!--end::Icon-->
+											</div>
+											<!--end::Item-->
+										</div>
+									</div>
+									<!--end::Timeline details-->
+								</div>
+								<!--end::Timeline content-->
+							</div>
+							<!--end::Timeline item-->
+							<!--begin::Timeline item-->
+							<div class="timeline-item">
+								<!--begin::Timeline line-->
+								<div class="timeline-line w-40px"></div>
+								<!--end::Timeline line-->
+								<!--begin::Timeline icon-->
+								<div class="timeline-icon symbol symbol-circle symbol-40px">
+									<div class="symbol-label bg-light">
+										<!--begin::Svg Icon | path: icons/duotone/Home/Library.svg-->
+										<span class="svg-icon svg-icon-2 svg-icon-gray-500">
+											<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+												<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+													<rect x="0" y="0" width="24" height="24" />
+													<path d="M5,3 L6,3 C6.55228475,3 7,3.44771525 7,4 L7,20 C7,20.5522847 6.55228475,21 6,21 L5,21 C4.44771525,21 4,20.5522847 4,20 L4,4 C4,3.44771525 4.44771525,3 5,3 Z M10,3 L11,3 C11.5522847,3 12,3.44771525 12,4 L12,20 C12,20.5522847 11.5522847,21 11,21 L10,21 C9.44771525,21 9,20.5522847 9,20 L9,4 C9,3.44771525 9.44771525,3 10,3 Z" fill="#000000" />
+													<rect fill="#000000" opacity="0.3" transform="translate(17.825568, 11.945519) rotate(-19.000000) translate(-17.825568, -11.945519)" x="16.3255682" y="2.94551858" width="3" height="18" rx="1" />
+												</g>
+											</svg>
+										</span>
+										<!--end::Svg Icon-->
+									</div>
+								</div>
+								<!--end::Timeline icon-->
+								<!--begin::Timeline content-->
+								<div class="timeline-content mb-10 mt-n1">
+									<!--begin::Timeline heading-->
+									<div class="pe-3 mb-5">
+										<!--begin::Title-->
+										<div class="fs-5 fw-bold mb-2">Task
+										<a href="#" class="text-primary fw-bolder me-1">#45890</a>merged with
+										<a href="#" class="text-primary fw-bolder me-1">#45890</a>in “Ads Pro Admin Dashboard project:</div>
+										<!--end::Title-->
+										<!--begin::Description-->
+										<div class="d-flex align-items-center mt-1 fs-6">
+											<!--begin::Info-->
+											<div class="text-muted me-2 fs-7">Initiated at 4:23 PM by</div>
+											<!--end::Info-->
+											<!--begin::User-->
+											<div class="symbol symbol-circle symbol-25px" data-bs-toggle="tooltip" data-bs-boundary="window" data-bs-placement="top" title="Nina Nilson">
+												<img src="assets/media/avatars/150-11.jpg" alt="img" />
+											</div>
+											<!--end::User-->
+										</div>
+										<!--end::Description-->
+									</div>
+									<!--end::Timeline heading-->
+								</div>
+								<!--end::Timeline content-->
+							</div>
+							<!--end::Timeline item-->
+							<!--begin::Timeline item-->
+							<div class="timeline-item">
+								<!--begin::Timeline line-->
+								<div class="timeline-line w-40px"></div>
+								<!--end::Timeline line-->
+								<!--begin::Timeline icon-->
+								<div class="timeline-icon symbol symbol-circle symbol-40px">
+									<div class="symbol-label bg-light">
+										<!--begin::Svg Icon | path: icons/duotone/Communication/Write.svg-->
+										<span class="svg-icon svg-icon-2 svg-icon-gray-500">
+											<svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+												<path d="M12.2674799,18.2323597 L12.0084872,5.45852451 C12.0004303,5.06114792 12.1504154,4.6768183 12.4255037,4.38993949 L15.0030167,1.70195304 L17.5910752,4.40093695 C17.8599071,4.6812911 18.0095067,5.05499603 18.0083938,5.44341307 L17.9718262,18.2062508 C17.9694575,19.0329966 17.2985816,19.701953 16.4718324,19.701953 L13.7671717,19.701953 C12.9505952,19.701953 12.2840328,19.0487684 12.2674799,18.2323597 Z" fill="#000000" fill-rule="nonzero" transform="translate(14.701953, 10.701953) rotate(-135.000000) translate(-14.701953, -10.701953)" />
+												<path d="M12.9,2 C13.4522847,2 13.9,2.44771525 13.9,3 C13.9,3.55228475 13.4522847,4 12.9,4 L6,4 C4.8954305,4 4,4.8954305 4,6 L4,18 C4,19.1045695 4.8954305,20 6,20 L18,20 C19.1045695,20 20,19.1045695 20,18 L20,13 C20,12.4477153 20.4477153,12 21,12 C21.5522847,12 22,12.4477153 22,13 L22,18 C22,20.209139 20.209139,22 18,22 L6,22 C3.790861,22 2,20.209139 2,18 L2,6 C2,3.790861 3.790861,2 6,2 L12.9,2 Z" fill="#000000" fill-rule="nonzero" opacity="0.3" />
+											</svg>
+										</span>
+										<!--end::Svg Icon-->
+									</div>
+								</div>
+								<!--end::Timeline icon-->
+								<!--begin::Timeline content-->
+								<div class="timeline-content mb-10 mt-n1">
+									<!--begin::Timeline heading-->
+									<div class="pe-3 mb-5">
+										<!--begin::Title-->
+										<div class="fs-5 fw-bold mb-2">3 new application design concepts added:</div>
+										<!--end::Title-->
+										<!--begin::Description-->
+										<div class="d-flex align-items-center mt-1 fs-6">
+											<!--begin::Info-->
+											<div class="text-muted me-2 fs-7">Created at 4:23 PM by</div>
+											<!--end::Info-->
+											<!--begin::User-->
+											<div class="symbol symbol-circle symbol-25px" data-bs-toggle="tooltip" data-bs-boundary="window" data-bs-placement="top" title="Marcus Dotson">
+												<img src="assets/media/avatars/150-3.jpg" alt="img" />
+											</div>
+											<!--end::User-->
+										</div>
+										<!--end::Description-->
+									</div>
+									<!--end::Timeline heading-->
+									<!--begin::Timeline details-->
+									<div class="overflow-auto pb-5">
+										<div class="d-flex align-items-center border border-dashed border-gray-300 rounded min-w-700px p-7">
+											<!--begin::Item-->
+											<div class="overlay me-10">
+												<!--begin::Image-->
+												<div class="overlay-wrapper">
+													<img alt="img" class="rounded w-200px" src="assets/media/demos/demo1.png" />
+												</div>
+												<!--end::Image-->
+												<!--begin::Link-->
+												<div class="overlay-layer bg-dark bg-opacity-10 rounded">
+													<a href="#" class="btn btn-sm btn-primary btn-shadow">Explore</a>
+												</div>
+												<!--end::Link-->
+											</div>
+											<!--end::Item-->
+											<!--begin::Item-->
+											<div class="overlay me-10">
+												<!--begin::Image-->
+												<div class="overlay-wrapper">
+													<img alt="img" class="rounded w-200px" src="assets/media/demos/demo2.png" />
+												</div>
+												<!--end::Image-->
+												<!--begin::Link-->
+												<div class="overlay-layer bg-dark bg-opacity-10 rounded">
+													<a href="#" class="btn btn-sm btn-primary btn-shadow">Explore</a>
+												</div>
+												<!--end::Link-->
+											</div>
+											<!--end::Item-->
+											<!--begin::Item-->
+											<div class="overlay">
+												<!--begin::Image-->
+												<div class="overlay-wrapper">
+													<img alt="img" class="rounded w-200px" src="assets/media/demos/demo3.png" />
+												</div>
+												<!--end::Image-->
+												<!--begin::Link-->
+												<div class="overlay-layer bg-dark bg-opacity-10 rounded">
+													<a href="#" class="btn btn-sm btn-primary btn-shadow">Explore</a>
+												</div>
+												<!--end::Link-->
+											</div>
+											<!--end::Item-->
+										</div>
+									</div>
+									<!--end::Timeline details-->
+								</div>
+								<!--end::Timeline content-->
+							</div>
+							<!--end::Timeline item-->
+							<!--begin::Timeline item-->
+							<div class="timeline-item">
+								<!--begin::Timeline line-->
+								<div class="timeline-line w-40px"></div>
+								<!--end::Timeline line-->
+								<!--begin::Timeline icon-->
+								<div class="timeline-icon symbol symbol-circle symbol-40px">
+									<div class="symbol-label bg-light">
+										<!--begin::Svg Icon | path: icons/duotone/Communication/Urgent-mail.svg-->
+										<span class="svg-icon svg-icon-2 svg-icon-gray-500">
+											<svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+												<path d="M12.7037037,14 L15.6666667,10 L13.4444444,10 L13.4444444,6 L9,12 L11.2222222,12 L11.2222222,14 L6,14 C5.44771525,14 5,13.5522847 5,13 L5,3 C5,2.44771525 5.44771525,2 6,2 L18,2 C18.5522847,2 19,2.44771525 19,3 L19,13 C19,13.5522847 18.5522847,14 18,14 L12.7037037,14 Z" fill="#000000" opacity="0.3" />
+												<path d="M9.80428954,10.9142091 L9,12 L11.2222222,12 L11.2222222,16 L15.6666667,10 L15.4615385,10 L20.2072547,6.57253826 C20.4311176,6.4108595 20.7436609,6.46126971 20.9053396,6.68513259 C20.9668779,6.77033951 21,6.87277228 21,6.97787787 L21,17 C21,18.1045695 20.1045695,19 19,19 L5,19 C3.8954305,19 3,18.1045695 3,17 L3,6.97787787 C3,6.70173549 3.22385763,6.47787787 3.5,6.47787787 C3.60510559,6.47787787 3.70753836,6.51099993 3.79274528,6.57253826 L9.80428954,10.9142091 Z" fill="#000000" />
+											</svg>
+										</span>
+										<!--end::Svg Icon-->
+									</div>
+								</div>
+								<!--end::Timeline icon-->
+								<!--begin::Timeline content-->
+								<div class="timeline-content mb-10 mt-n1">
+									<!--begin::Timeline heading-->
+									<div class="pe-3 mb-5">
+										<!--begin::Title-->
+										<div class="fs-5 fw-bold mb-2">New case
+										<a href="#" class="text-primary fw-bolder me-1">#67890</a>is assigned to you in Multi-platform Database Design project</div>
+										<!--end::Title-->
+										<!--begin::Description-->
+										<div class="overflow-auto pb-5">
+											<!--begin::Wrapper-->
+											<div class="d-flex align-items-center mt-1 fs-6">
+												<!--begin::Info-->
+												<div class="text-muted me-2 fs-7">Added at 4:23 PM by</div>
+												<!--end::Info-->
+												<!--begin::User-->
+												<a href="#" class="text-primary fw-bolder me-1">Alice Tan</a>
+												<!--end::User-->
+											</div>
+											<!--end::Wrapper-->
+										</div>
+										<!--end::Description-->
+									</div>
+									<!--end::Timeline heading-->
+								</div>
+								<!--end::Timeline content-->
+							</div>
+							<!--end::Timeline item-->
+							<!--begin::Timeline item-->
+							<div class="timeline-item">
+								<!--begin::Timeline line-->
+								<div class="timeline-line w-40px"></div>
+								<!--end::Timeline line-->
+								<!--begin::Timeline icon-->
+								<div class="timeline-icon symbol symbol-circle symbol-40px">
+									<div class="symbol-label bg-light">
+										<!--begin::Svg Icon | path: icons/duotone/Communication/Write.svg-->
+										<span class="svg-icon svg-icon-2 svg-icon-gray-500">
+											<svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+												<path d="M12.2674799,18.2323597 L12.0084872,5.45852451 C12.0004303,5.06114792 12.1504154,4.6768183 12.4255037,4.38993949 L15.0030167,1.70195304 L17.5910752,4.40093695 C17.8599071,4.6812911 18.0095067,5.05499603 18.0083938,5.44341307 L17.9718262,18.2062508 C17.9694575,19.0329966 17.2985816,19.701953 16.4718324,19.701953 L13.7671717,19.701953 C12.9505952,19.701953 12.2840328,19.0487684 12.2674799,18.2323597 Z" fill="#000000" fill-rule="nonzero" transform="translate(14.701953, 10.701953) rotate(-135.000000) translate(-14.701953, -10.701953)" />
+												<path d="M12.9,2 C13.4522847,2 13.9,2.44771525 13.9,3 C13.9,3.55228475 13.4522847,4 12.9,4 L6,4 C4.8954305,4 4,4.8954305 4,6 L4,18 C4,19.1045695 4.8954305,20 6,20 L18,20 C19.1045695,20 20,19.1045695 20,18 L20,13 C20,12.4477153 20.4477153,12 21,12 C21.5522847,12 22,12.4477153 22,13 L22,18 C22,20.209139 20.209139,22 18,22 L6,22 C3.790861,22 2,20.209139 2,18 L2,6 C2,3.790861 3.790861,2 6,2 L12.9,2 Z" fill="#000000" fill-rule="nonzero" opacity="0.3" />
+											</svg>
+										</span>
+										<!--end::Svg Icon-->
+									</div>
+								</div>
+								<!--end::Timeline icon-->
+								<!--begin::Timeline content-->
+								<div class="timeline-content mb-10 mt-n1">
+									<!--begin::Timeline heading-->
+									<div class="pe-3 mb-5">
+										<!--begin::Title-->
+										<div class="fs-5 fw-bold mb-2">You have received a new order:</div>
+										<!--end::Title-->
+										<!--begin::Description-->
+										<div class="d-flex align-items-center mt-1 fs-6">
+											<!--begin::Info-->
+											<div class="text-muted me-2 fs-7">Placed at 5:05 AM by</div>
+											<!--end::Info-->
+											<!--begin::User-->
+											<div class="symbol symbol-circle symbol-25px" data-bs-toggle="tooltip" data-bs-boundary="window" data-bs-placement="top" title="Robert Rich">
+												<img src="assets/media/avatars/150-14.jpg" alt="img" />
+											</div>
+											<!--end::User-->
+										</div>
+										<!--end::Description-->
+									</div>
+									<!--end::Timeline heading-->
+									<!--begin::Timeline details-->
+									<div class="overflow-auto pb-5">
+										<!--begin::Notice-->
+										<div class="notice d-flex bg-light-primary rounded border-primary border border-dashed min-w-lg-600px flex-shrink-0 p-6">
+											<!--begin::Icon-->
+											<!--begin::Svg Icon | path: icons/duotone/Code/Git4.svg-->
+											<span class="svg-icon svg-icon-2tx svg-icon-primary me-4">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+													<path d="M6,7 C7.1045695,7 8,6.1045695 8,5 C8,3.8954305 7.1045695,3 6,3 C4.8954305,3 4,3.8954305 4,5 C4,6.1045695 4.8954305,7 6,7 Z M6,9 C3.790861,9 2,7.209139 2,5 C2,2.790861 3.790861,1 6,1 C8.209139,1 10,2.790861 10,5 C10,7.209139 8.209139,9 6,9 Z" fill="#000000" fill-rule="nonzero" />
+													<path d="M7,11.4648712 L7,17 C7,18.1045695 7.8954305,19 9,19 L15,19 L15,21 L9,21 C6.790861,21 5,19.209139 5,17 L5,8 L5,7 L7,7 L7,8 C7,9.1045695 7.8954305,10 9,10 L15,10 L15,12 L9,12 C8.27142571,12 7.58834673,11.8052114 7,11.4648712 Z" fill="#000000" fill-rule="nonzero" opacity="0.3" />
+													<path d="M18,22 C19.1045695,22 20,21.1045695 20,20 C20,18.8954305 19.1045695,18 18,18 C16.8954305,18 16,18.8954305 16,20 C16,21.1045695 16.8954305,22 18,22 Z M18,24 C15.790861,24 14,22.209139 14,20 C14,17.790861 15.790861,16 18,16 C20.209139,16 22,17.790861 22,20 C22,22.209139 20.209139,24 18,24 Z" fill="#000000" fill-rule="nonzero" />
+													<path d="M18,13 C19.1045695,13 20,12.1045695 20,11 C20,9.8954305 19.1045695,9 18,9 C16.8954305,9 16,9.8954305 16,11 C16,12.1045695 16.8954305,13 18,13 Z M18,15 C15.790861,15 14,13.209139 14,11 C14,8.790861 15.790861,7 18,7 C20.209139,7 22,8.790861 22,11 C22,13.209139 20.209139,15 18,15 Z" fill="#000000" fill-rule="nonzero" />
+												</svg>
+											</span>
+											<!--end::Svg Icon-->
+											<!--end::Icon-->
+											<!--begin::Wrapper-->
+											<div class="d-flex flex-stack flex-grow-1 flex-wrap flex-md-nowrap">
+												<!--begin::Content-->
+												<div class="mb-3 mb-md-0 fw-bold">
+													<h4 class="text-gray-800 fw-bolder">Database Backup Process Completed!</h4>
+													<div class="fs-6 text-gray-600 pe-7">Login into Metronic Admin Dashboard to make sure the data integrity is OK</div>
+												</div>
+												<!--end::Content-->
+												<!--begin::Action-->
+												<a href="#" class="btn btn-primary px-6 align-self-center text-nowrap">Proceed</a>
+												<!--end::Action-->
+											</div>
+											<!--end::Wrapper-->
+										</div>
+										<!--end::Notice-->
+									</div>
+									<!--end::Timeline details-->
+								</div>
+								<!--end::Timeline content-->
+							</div>
+							<!--end::Timeline item-->
+							<!--begin::Timeline item-->
+							<div class="timeline-item">
+								<!--begin::Timeline line-->
+								<div class="timeline-line w-40px"></div>
+								<!--end::Timeline line-->
+								<!--begin::Timeline icon-->
+								<div class="timeline-icon symbol symbol-circle symbol-40px">
+									<div class="symbol-label bg-light">
+										<!--begin::Svg Icon | path: icons/duotone/Shopping/Cart4.svg-->
+										<span class="svg-icon svg-icon-2 svg-icon-gray-500">
+											<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+												<path opacity="0.25" d="M3.19406 11.1644C3.09247 10.5549 3.56251 10 4.18045 10H19.8195C20.4375 10 20.9075 10.5549 20.8059 11.1644L19.4178 19.4932C19.1767 20.9398 17.9251 22 16.4586 22H7.54138C6.07486 22 4.82329 20.9398 4.58219 19.4932L3.19406 11.1644Z" fill="#7E8299" />
+												<path d="M2 9.5C2 8.67157 2.67157 8 3.5 8H20.5C21.3284 8 22 8.67157 22 9.5C22 10.3284 21.3284 11 20.5 11H3.5C2.67157 11 2 10.3284 2 9.5Z" fill="#7E8299" />
+												<path d="M10 13C9.44772 13 9 13.4477 9 14V18C9 18.5523 9.44772 19 10 19C10.5523 19 11 18.5523 11 18V14C11 13.4477 10.5523 13 10 13Z" fill="#7E8299" />
+												<path d="M14 13C13.4477 13 13 13.4477 13 14V18C13 18.5523 13.4477 19 14 19C14.5523 19 15 18.5523 15 18V14C15 13.4477 14.5523 13 14 13Z" fill="#7E8299" />
+												<g opacity="0.25">
+													<path d="M10.7071 3.70711C11.0976 3.31658 11.0976 2.68342 10.7071 2.29289C10.3166 1.90237 9.68342 1.90237 9.29289 2.29289L4.29289 7.29289C3.90237 7.68342 3.90237 8.31658 4.29289 8.70711C4.68342 9.09763 5.31658 9.09763 5.70711 8.70711L10.7071 3.70711Z" fill="#7E8299" />
+													<path d="M13.2929 3.70711C12.9024 3.31658 12.9024 2.68342 13.2929 2.29289C13.6834 1.90237 14.3166 1.90237 14.7071 2.29289L19.7071 7.29289C20.0976 7.68342 20.0976 8.31658 19.7071 8.70711C19.3166 9.09763 18.6834 9.09763 18.2929 8.70711L13.2929 3.70711Z" fill="#7E8299" />
+												</g>
+											</svg>
+										</span>
+										<!--end::Svg Icon-->
+									</div>
+								</div>
+								<!--end::Timeline icon-->
+								<!--begin::Timeline content-->
+								<div class="timeline-content mt-n1">
+									<!--begin::Timeline heading-->
+									<div class="pe-3 mb-5">
+										<!--begin::Title-->
+										<div class="fs-5 fw-bold mb-2">New order
+										<a href="#" class="text-primary fw-bolder me-1">#67890</a>is placed for Workshow Planning &amp; Budget Estimation</div>
+										<!--end::Title-->
+										<!--begin::Description-->
+										<div class="d-flex align-items-center mt-1 fs-6">
+											<!--begin::Info-->
+											<div class="text-muted me-2 fs-7">Placed at 4:23 PM by</div>
+											<!--end::Info-->
+											<!--begin::User-->
+											<a href="#" class="text-primary fw-bolder me-1">Jimmy Bold</a>
+											<!--end::User-->
+										</div>
+										<!--end::Description-->
+									</div>
+									<!--end::Timeline heading-->
+								</div>
+								<!--end::Timeline content-->
+							</div>
+							<!--end::Timeline item-->
+						</div>
+						<!--end::Timeline items-->
+					</div>
+					<!--end::Content-->
+				</div>
+				<!--end::Body-->
+				<!--begin::Footer-->
+				<div class="card-footer py-5 text-center" id="kt_activities_footer">
+					<a href="pages/profile/activity.html" class="btn btn-bg-white text-primary">View All Activities
+					<!--begin::Svg Icon | path: icons/duotone/Navigation/Right-2.svg-->
+					<span class="svg-icon svg-icon-3 svg-icon-primary">
+						<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+							<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+								<polygon points="0 0 24 0 24 24 0 24" />
+								<rect fill="#000000" opacity="0.5" transform="translate(8.500000, 12.000000) rotate(-90.000000) translate(-8.500000, -12.000000)" x="7.5" y="7.5" width="2" height="9" rx="1" />
+								<path d="M9.70710318,15.7071045 C9.31657888,16.0976288 8.68341391,16.0976288 8.29288961,15.7071045 C7.90236532,15.3165802 7.90236532,14.6834152 8.29288961,14.2928909 L14.2928896,8.29289093 C14.6714686,7.914312 15.281055,7.90106637 15.675721,8.26284357 L21.675721,13.7628436 C22.08284,14.136036 22.1103429,14.7686034 21.7371505,15.1757223 C21.3639581,15.5828413 20.7313908,15.6103443 20.3242718,15.2371519 L15.0300721,10.3841355 L9.70710318,15.7071045 Z" fill="#000000" fill-rule="nonzero" transform="translate(14.999999, 11.999997) scale(1, -1) rotate(90.000000) translate(-14.999999, -11.999997)" />
+							</g>
+						</svg>
+					</span>
+					<!--end::Svg Icon--></a>
+				</div>
+				<!--end::Footer-->
+			</div>
+		</div>
+		<!--end::Activities drawer-->
 		<!--begin::Chat drawer-->
 		<div id="kt_drawer_chat" class="bg-white" data-kt-drawer="true" data-kt-drawer-name="chat" data-kt-drawer-activate="true" data-kt-drawer-overlay="true" data-kt-drawer-width="{default:'300px', 'md': '500px'}" data-kt-drawer-direction="end" data-kt-drawer-toggle="#kt_drawer_chat_toggle" data-kt-drawer-close="#kt_drawer_chat_close">
 			<!--begin::Messenger-->
@@ -526,10 +1603,10 @@ License: For each use you must have a valid license purchased only from above li
 			<!--end::Messenger-->
 		</div>
 		<!--end::Chat drawer-->
-		<!--begin::Exolore drawer toggle
+		<!--begin::Exolore drawer toggle-->
 		<button id="kt_explore_toggle" class="btn btn-sm btn-white btn-active-primary shadow-sm position-fixed px-5 fw-bolder zindex-2 top-50 rounded-top-0 mt-10 end-0 transform-90 fs-6" title="Explore Metronic" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-trigger="hover">
 			<span id="kt_explore_toggle_label">Explore</span>
-		</button>-->
+		</button>
 		<!--end::Exolore drawer toggle-->
 		<!--begin::Exolore drawer-->
 		<div id="kt_explore" class="bg-white" data-kt-drawer="true" data-kt-drawer-name="explore" data-kt-drawer-activate="true" data-kt-drawer-overlay="true" data-kt-drawer-width="{default:'300px', 'lg': '375px'}" data-kt-drawer-direction="end" data-kt-drawer-toggle="#kt_explore_toggle" data-kt-drawer-close="#kt_explore_close">
@@ -2577,7 +3654,13 @@ License: For each use you must have a valid license purchased only from above li
 		<script src="{{ asset('assets/plugins/global/plugins.bundle.js') }}"></script>
 		<script src="{{ asset('assets/js/scripts.bundle.js') }}"></script>
 		<!--end::Global Javascript Bundle-->
+		<!--begin::Page Vendors Javascript(used by this page)-->
+		<script src="{{ asset('assets/plugins/custom/datatables/datatables.bundle.js') }}"></script>
+		<!--end::Page Vendors Javascript-->
 		<!--begin::Page Custom Javascript(used by this page)-->
+		<script src="{{ asset('assets/js/custom/apps/user-management/users/list/table.js') }}"></script>
+		<script src="{{ asset('assets/js/custom/apps/user-management/users/list/export-users.js') }}"></script>
+		<script src="{{ asset('js/product/product-add.js') }}"></script>
 		<script src="{{ asset('assets/js/custom/widgets.js') }}"></script>
 		<script src="{{ asset('assets/js/custom/apps/chat/chat.js') }}"></script>
 		<script src="{{ asset('assets/js/custom/modals/create-app.js') }}"></script>

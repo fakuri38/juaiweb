@@ -1500,7 +1500,7 @@ element::-webkit-scrollbar {
                                                 <div class="fs-7 fw-bold text-gray-400">Jika Ada Sila Tekan</div> 
                                             </div> <!--end::Label--> <!--begin::Switch--> 
                                             <label class="form-check form-switch form-check-custom form-check-solid"> 
-                                                <input id="price_check" class="form-check-input" type="checkbox"> 
+                                                <input id="price_check" class="form-check-input" name="price_check" type="checkbox"> 
                                             </label> <!--end::Switch--> 
                                             </div>
 
@@ -2119,6 +2119,7 @@ element::-webkit-scrollbar {
 		var OPTION_URL = "{{route('AttributeOption')}}";
 		var DELETE_URL = "{{route('AttrOptionDestroy')}}";
 		var ATTRIBUTE_ID = "{{$attribute_id}}";
+		var OPTION_ID = "{{route('EditOption')}}";
 		</script>
 		<script src="{{asset('js/attribute/attribute-add.js')}}"></script>
 

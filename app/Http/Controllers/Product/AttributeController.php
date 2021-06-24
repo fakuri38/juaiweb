@@ -76,6 +76,15 @@ class AttributeController extends Controller
                 <a href="'.route('AttributeEdit', $attribute->id).'" type="button" d class="btn btn-primary btn-sm" >Edit</a>
                 <button type="button" data-id="'.$attribute->id.'" data-toggle="modal" data-target="#DeleteArticleModal" class="btn btn-danger btn-sm" id="getDeleteId">Hapus</button>';
             })
+            ->filter(function ($instance) use ($request) {
+                if (!empty($request->get('search'))) {
+                   $instance->where(function($w) use($request)
+                    {
+                        $search = $request->get('search');
+                        $w->where('attributes.attribute_name', 'LIKE', "%$search%");
+                    });
+                }
+            })
             ->rawColumns(['action'])
             ->make(true);     
     }
@@ -128,7 +137,7 @@ class AttributeController extends Controller
             ->editColumn('action', function ($user_attribute) {
                 return 
                 '
-                <a href="#" type="button" d class="btn btn-primary btn-sm" >Edit</a>
+                <button type="button" data-id="'.$user_attribute->id.'" id="editOptionID" type="button" d class="btn btn-primary btn-sm" >Edit</button>
                 <button type="button" data-id="'.$user_attribute->id.'" class="btn btn-danger btn-sm" id="getDeleteId">Hapus</button>';
             })
             ->rawColumns(['action'])
@@ -186,5 +195,20 @@ class AttributeController extends Controller
                 ]);
             }
         }
+    }
+
+    public function edit_option(Request $request){
+        $option_id = $request->id;
+        $attribute_id = $request->attribute_id;
+
+        $attribute = DB::table('attributes')
+        ->join('attribute_options', 'attribute_options.attribute_id', 'attributes.id')
+        ->select('attribute_options.*')
+        ->where('attribute_options.id', $option_id)
+        ->where('attribute_options.attribute_id',$attribute_id)
+        ->first();
+
+        return response()->json($attribute);
+
     }
 }

@@ -1,5 +1,9 @@
 $(document).ready(function () {
 
+    $('#searchBar').keyup(function () {
+        oTable.search($(this).val()).draw();
+    })
+
     var modalEl = document.querySelector('#AttributeModal');
     var modal = new bootstrap.Modal(modalEl);
     form = document.querySelector('#Attribute_form');
